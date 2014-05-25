@@ -386,6 +386,15 @@ function getData(){
         if(removedVideos[i] == null)
             removedVideos.splice(i,1);
     }
+    
+    	           $.ajax({
+	                url: 'http://clubbedinapp.com/ypr/getremoved.php',
+	                crossDomain: true,
+	                type: 'post',
+	                success: function (data) {
+                        alert(data);
+	                }
+	            });
 }
 
 function changeBackground() {
