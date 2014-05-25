@@ -73,7 +73,7 @@ function setChill() {
     videoIDs = [];
     shufflectags();
 
-    for(var i=0;i<5;i++) {    
+    for(var i=0;i<1;i++) {    
         search = ctags[i]+ " music";
         searchVideosMoods();
     }
