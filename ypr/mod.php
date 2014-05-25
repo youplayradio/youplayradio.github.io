@@ -13,8 +13,8 @@ $result = mysql_query('SELECT * FROM flags');
 
 while($row = mysql_fetch_assoc($result)){
     
-    
-    
+    echo '<a href="'+$row['videoLink']+'">Video Link</a>';
+    echo $row['videoLink'];
     
 }
 
