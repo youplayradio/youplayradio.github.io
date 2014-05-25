@@ -14,15 +14,15 @@ $result = mysql_query('SELECT * FROM flags');
   if (isset($_GET['rid'])) {
 
       if($_GET['r'] == 0) {
-          echo $_GET['searcht']; 
-          echo $_GET['rid'];
-          mysql_query('DELETE FROM flags WHERE searchText = "'.$_GET['searcht'].'" AND videoID = "'.$rid.'"');
+          mysql_query('DELETE FROM flags WHERE searchText = "'.$_GET['searcht'].'" AND videoID = "'.$_GET['rid'].'"');
           echo mysql_error();
       } else
       {
           mysql_query('INSERT INTO removed (videoID) VALUES ("'.$_GET['rid'].'")');
-          mysql_query('DELETE FROM flags WHERE searchText = "'.$_GET['searcht'].'" AND videoID = "'.$rid.'"');
+          mysql_query('DELETE FROM flags WHERE searchText = "'.$_GET['searcht'].'" AND videoID = "'.$_GET['rid'].'"');
       }
+      
+      header('Location: mod.php');  
   }
 
 while($row = mysql_fetch_assoc($result)){
