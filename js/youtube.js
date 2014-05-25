@@ -392,16 +392,16 @@ function getData(){
 	                url: 'http://clubbedinapp.com/ypr/getremoved.php',
 	                crossDomain: true,
 	                type: 'post',
+                    async: false,
 	                success: function (data) {
-                        alert(data);
                         var json = jQuery.parseJSON(data);
                         for(var i=0; i<json.length; i++)
                         {
-                            alert(json[i]);
                             removedVideos.push(json[i]);
                         }
 	                }
 	            });
+    
     alert(removedVideos);
 }
 
