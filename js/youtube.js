@@ -59,7 +59,6 @@ function parseResultsMoods() {
     xmlHttp.send();
     results = xmlHttp.responseText;
     //console.log(results);
-
     results = $.parseJSON(results);
     
     $.each(results.items, function(item) {
