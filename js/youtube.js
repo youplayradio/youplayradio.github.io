@@ -340,7 +340,7 @@ function getData(){
     {
      if(stags[i] == null)
          stags.splice(i,1);
-     if(htags[i] == null)
+     if(htags[i] == null || htags[i] == undefined)
          htags.splice(i,1);
      if(ptags[i] == null)
          ptags.splice(i,1);
