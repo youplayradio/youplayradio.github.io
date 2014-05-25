@@ -12,7 +12,9 @@ mysql_select_db($db)
 $result = mysql_query('SELECT * FROM flags');
 
   if (isset($_GET['rid'])) {
-      if($_GET['rid'] == 0) {
+        echo $_GET['rid'];
+      if($_GET['r'] == 0) {
+          echo "here";
           mysql_query('DELETE FROM flags WHERE searchText = "'.$_GET['searcht'].'" AND videoID = "'.$rid.'"');
       } else
       {
@@ -26,8 +28,8 @@ while($row = mysql_fetch_assoc($result)){
     
     <a href="<?php echo $row['videoLink']?>" target="_blank">Video Link</a>
     <br> Search Text: <?php echo $row['searchText'] ?>
-    <br> <a href="mod.php?rid=0&searcht=<?php echo $row['searchText']?>">Keep</a>
-    <br> <a href="mod.php?rid=<?php echo $row['videoID']?>&searcht=<?php echo $row['searchText']?>">Remove</a>
+    <br> <a href="mod.php?rid=<?php echo $row['videoID']?>&searcht=<?php echo $row['searchText']?>&r=0">Keep</a>
+    <br> <a href="mod.php?rid=<?php echo $row['videoID']?>&searcht=<?php echo $row['searchText']?>&r=1">Remove</a>
 
     <hr>
 <?php
