@@ -64,6 +64,7 @@ function parseResultsMoods() {
             videoIDs.push(results.items[item].id.videoId);
     });
     
+    alert(videoIDs.length);
     
 }
 
