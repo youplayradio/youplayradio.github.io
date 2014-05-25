@@ -379,7 +379,7 @@ function getData(){
             removedVideos.splice(i,1);
     }
     
-    var updatePageViews = new Firebase('https://youplayradio.firebaseIO.com/PageViews/0');
+    //var updatePageViews = new Firebase('https://youplayradio.firebaseIO.com/PageViews/0');
     
     updatePageViews.update({0:pageVisits});
 }
