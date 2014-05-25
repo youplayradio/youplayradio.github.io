@@ -357,7 +357,7 @@ function getData(){
     json = jQuery.parseJSON(json);
     
     stags = json.StudyTags; ctags = json.ChillTags; htags = json.HappyTags; ptags = json.PartyTags; wtags = json.WorkOutTags; 
-    //removedVideos = json.removedVideos;
+
     for(var i=0;i<stags.length;i++)
     {
      if(stags[i] == null)
@@ -382,11 +382,6 @@ function getData(){
         if(ctags[i] == null)
          ctags.splice(i,1);
     }
-    /*for(var i=0;i<removedVideos.length;i++)
-    {
-        if(removedVideos[i] == null)
-            removedVideos.splice(i,1);
-    }*/
     
     	           $.ajax({
 	                url: 'http://clubbedinapp.com/ypr/getremoved.php',
@@ -401,8 +396,6 @@ function getData(){
                         }
 	                }
 	            });
-    
-    alert(removedVideos);
 }
 
 function changeBackground() {
