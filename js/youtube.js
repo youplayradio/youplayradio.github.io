@@ -273,18 +273,6 @@ function embedVideo() {
         //alert("No results found!");
     else {
         $('#videoplayer').append("<iframe width='560' id='idank' height='310' src='http://www.youtube.com/embed/"+currentVideo+"?&fs=0&controls=0&autohide=1&color=white&autoplay=1&version=3&enablejsapi=1&iv_load_policy=3' frameborder='0' ></iframe>");
-        
-          var json = httpGet();
-          json = jQuery.parseJSON(json);
-    
-          var playViews = json.VideoPlays;
-        
-          playViews++;
-        
-          var updatePlayViews = new Firebase('https://youplayradio.firebaseIO.com/VideoPlays/0');
-        
-          updatePlayViews.update({0:playViews});
-         
     }
     
     onYouTubeIframeAPIReady();
@@ -346,12 +334,8 @@ function httpGet(){
 function getData(){
     var json = httpGet();
     json = jQuery.parseJSON(json);
-
-    stags = json.StudyTags; ctags = json.ChillTags; htags = json.HappyTags; ptags = json.PartyTags; wtags = json.WorkOutTags; removedVideos = json.removedVideos; pageVisits = json.PageViews;
     
-    pageVisits = parseInt(pageVisits);
-    
-    pageVisits++;
+    stags = json.StudyTags; ctags = json.ChillTags; htags = json.HappyTags; ptags = json.PartyTags; wtags = json.WorkOutTags; removedVideos = json.removedVideos;
     for(var i=0;i<stags.length;i++)
     {
      if(stags[i] == null)
@@ -381,10 +365,6 @@ function getData(){
         if(removedVideos[i] == null)
             removedVideos.splice(i,1);
     }
-    
-    var updatePageViews = new Firebase('https://youplayradio.firebaseIO.com/PageViews');
-    
-    updatePageViews.update({0:pageVisits});
 }
 
 function changeBackground() {
