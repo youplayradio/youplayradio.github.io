@@ -126,7 +126,6 @@
 <div id="fb-root"></div>
 <script>
     
-    var pathname = "http://youtube.com/watch/"+currentVideo;
     
   window.fbAsyncInit = function() {
     // init the FB JS SDK
@@ -143,16 +142,12 @@
         method: 'feed',
         name: 'YouPlay Radio', // name of the product or content you want to share
         link: pathname, // link back to the product or content you are sharing
-        picture: 'http://youplayradio.github.io/img/icons/logo.png', // path to an image you would like to share with this content
+        picture: 'http://youplayradio.github.io/img/icons/Play_Workout.png', // path to an image you would like to share with this content
         caption: 'I found this song through YouPlay Radio!', // caption
         description: 'I love this song!' // description of your product or content
       },
       function(response) {
-        if (response && response.post_id) {
-          alert('Post was published.');
-        } else {
-          alert('Post was not published.');
-        }
+
       }
     );
 
@@ -160,6 +155,7 @@
 
  // Load the SDK Asynchronously
  function fb_callout() {
+    var pathname = "http://youtube.com/watch/"+currentVideo;
      (function(d){
          var js, id = 'facebook-jssdk', ref = d.getElementsByTagName('script')[0];
          if (d.getElementById(id)) {return;}
