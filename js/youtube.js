@@ -327,7 +327,6 @@ function flagged() {
                     },
 	                success: function (data) {
 	                	alert("Video has been flagged for being irrelevant. Awaiting moderation...");
-                        alert(data);
 	                },
 	                error: function (data) {
 						alert("Error: Could Not Flag Video");
