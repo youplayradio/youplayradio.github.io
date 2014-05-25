@@ -14,7 +14,7 @@ $result = mysql_query('SELECT * FROM flags');
   if (isset($_GET['rid'])) {
 
       if($_GET['r'] == 0) {
-          echo $_GET['searcht'];
+          echo $_GET['searcht']; 
           echo $_GET['rid'];
           mysql_query('DELETE FROM flags WHERE searchText = "'.$_GET['searcht'].'" AND videoID = "'.$rid.'"');
       } else
