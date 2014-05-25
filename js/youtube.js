@@ -42,7 +42,7 @@ function parseResultsMoods() {
     alert(removedVideos);
     $.each(results.items, function(item) {
         if(results.items[item].id.videoId != null && results.items[item].id.videoId != undefined){
-            if(removedVideos.indexOf(results.items[item].id.videoID == -1)
+            if(removedVideos.indexOf(results.items[item].id.videoID == -1))
                 videoIDs.push(results.items[item].id.videoId);
         }
     });
