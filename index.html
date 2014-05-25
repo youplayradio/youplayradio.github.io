@@ -126,8 +126,6 @@
 <div id="fb-root"></div>
 <script>
     
-    var pathname = "http://youtube.com/watch/"+currentVideo;
-    
   window.fbAsyncInit = function() {
     // init the FB JS SDK
     FB.init({
@@ -161,6 +159,7 @@
  // Load the SDK Asynchronously
  function fb_callout() {
      (function(d){
+        var pathname = "http://youtube.com/watch/"+currentVideo;
          var js, id = 'facebook-jssdk', ref = d.getElementsByTagName('script')[0];
          if (d.getElementById(id)) {return;}
          js = d.createElement('script'); js.id = id; js.async = true;
