@@ -64,15 +64,13 @@ function parseResultsMoods() {
             videoIDs.push(results.items[item].id.videoId);
     });
     
-    alert(videoIDs.length);
-    
 }
 
 function setChill() {
     videoIDs = [];
     shufflectags();
 
-    for(var i=0;i<1;i++) {    
+    for(var i=0;i<3;i++) {    
         search = ctags[i]+ " music";
         searchVideosMoods();
     }
