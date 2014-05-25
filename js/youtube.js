@@ -75,7 +75,6 @@ function setChill() {
     }
     shuffleArray();
     currentIndex = 0;
-    alert(videoIDs.length);
     embedVideo();
 }
 function setHappy() {
