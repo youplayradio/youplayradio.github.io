@@ -340,14 +340,21 @@ function getData(){
     {
      if(stags[i] == null)
          stags.splice(i,1);
-     if(htags[i] == null || htags[i] == undefined)
+    }
+    for(var i=0;i<htags.length;i++)
+    {
+     if(htags[i] == null)
          htags.splice(i,1);
+    }
+    for (var i=0;i<ptags.length;i++)
+    {
      if(ptags[i] == null)
          ptags.splice(i,1);
+    }
+    for (var i=0;i<wtags.length.i++){
      if(wtags[i] == null)
          wtags.splice(i,1);
     }
-    
     for (var i=0; i<ctags.length;i++)
     {
         if(ctags[i] == null)
