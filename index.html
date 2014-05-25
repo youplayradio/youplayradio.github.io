@@ -13,6 +13,7 @@
     
     <!-- Bootstrap core CSS -->
     <link href="css/bootstrap.css" rel="stylesheet">
+    <script src="js/jquery-1.10.2.js"></script>
 
     <!-- Add custom CSS here -->
     <link href="css/stylish-portfolio.css" rel="stylesheet">
@@ -20,8 +21,7 @@
     <script type="text/javascript" src="http://www.youtube.com/player_api"></script>
 </head>
 
-<body onload="getData();">
-    
+<body onload="getData();">    
      <div style="padding-right:50px;padding-top:2px;float:left">
          <img src="img/icons/logo.png" alt="Banner Image" width="160" height="75"/>
     </div>
@@ -40,7 +40,7 @@
             <a onclick="javascript:play();"><img src="img/icons/play.png" alt="Banner Image" width="70" height="70"/></a>
             <a onclick="javascript:nextSong();"><img src="img/icons/skip.png" alt="Banner Image" width="70" height="70"/></a>
             <a onclick="javascript:flagged();" id="flagger"><img src="img/icons/flag.png" alt="Banner Image" width="70" height="70"/></a>
-            <!--<a data-href="https://youplayradio.github.io" data-type="box_count"><img src="img/icons/share.png" alt="Banner Image" width="70" height="70"></a>-->
+            <a onclick="javascript:fb_callout();"><img src="img/icons/share.png" width="70" height="70"></a>
     </div>
     
     
@@ -91,7 +91,6 @@
 
   
     <!-- JavaScript -->
-    <script src="js/jquery-1.10.2.js"></script>
     <script src="js/bootstrap.js"></script>
     <script src="js/youtube.js"></script>
     <script src="https://apis.google.com/js/client.js?onload=googleApiClientReady"></script>
@@ -127,13 +126,51 @@
     });
     </script>
 <div id="fb-root"></div>
-<script>(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) return;
-  js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&appId=1382346558721261&version=v2.0";
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
+<script>
+    
+    var pathname = "http://youtube.com/watch/"+currentVideo;
+    
+  window.fbAsyncInit = function() {
+    // init the FB JS SDK
+    FB.init({
+      appId      : '1382346558721261', // App ID from the App Dashboard
+      status     : true, // check the login status upon init?
+      cookie     : true, // set sessions cookies to allow your server to access the session?
+      xfbml      : true  // parse XFBML tags on this page?
+    });
+
+    // Additional initialization code such as adding Event Listeners goes here
+    FB.ui(
+      {
+        method: 'feed',
+        name: 'YouPlay Radio', // name of the product or content you want to share
+        link: pathname, // link back to the product or content you are sharing
+        picture: 'http://youplayradio.github.io/img/icons/logo.png', // path to an image you would like to share with this content
+        caption: 'I found this song through YouPlay Radio!', // caption
+        description: 'I love this song!' // description of your product or content
+      },
+      function(response) {
+        if (response && response.post_id) {
+          alert('Post was published.');
+        } else {
+          alert('Post was not published.');
+        }
+      }
+    );
+
+  };
+
+ // Load the SDK Asynchronously
+ function fb_callout() {
+     (function(d){
+         var js, id = 'facebook-jssdk', ref = d.getElementsByTagName('script')[0];
+         if (d.getElementById(id)) {return;}
+         js = d.createElement('script'); js.id = id; js.async = true;
+         js.src = "//connect.facebook.net/en_US/all.js";
+         ref.parentNode.insertBefore(js, ref);
+         }(document));
+     }
+</script> 
 </body>
 
 </html>
