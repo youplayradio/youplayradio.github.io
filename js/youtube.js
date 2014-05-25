@@ -307,9 +307,12 @@ function flagged() {
     if(currentVideo == null || currentVideo == undefined)
         alert("No video to flag!");
     else {
-         $('#flagger').attr('href', "mailto:youplayradio@gmail.com?Subject=Flagged%20Video&Body=Link:%20http://youtube.com/watch/"+currentVideo);  
-    
-    window.location=document.getElementById('flagger').href;
+         //$('#flagger').attr('href', "mailto:youplayradio@gmail.com?Subject=Flagged%20Video&Body=Link:%20http://youtube.com/watch/"+currentVideo);  
+    var videoLink = "http://youtube.com/watch/"+currentVideo;
+    var searchText = search;
+        alert(videoLink);
+        alert(searchText);
+    //window.location=document.getElementById('flagger').href;
     }
 }
 
