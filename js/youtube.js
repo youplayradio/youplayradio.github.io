@@ -25,7 +25,7 @@ function searchVideos() {
 }
 
 function searchVideosMoods() {
-    var searchURL = "https://www.googleapis.com/youtube/v3/search?part=snippet&q="+search+"&key=AIzaSyBqoNc396Db0tYILTe8-qazHwuCwQkF0Kk&maxResults=2";
+    var searchURL = "https://www.googleapis.com/youtube/v3/search?part=snippet&q="+search+"&key=AIzaSyBqoNc396Db0tYILTe8-qazHwuCwQkF0Kk&maxResults=50";
     
     var xmlHttp = null;
 
@@ -49,7 +49,7 @@ function parseResultsMoods() {
     var nextPageToken = results.nextPageToken;
     alert(nextPageToken);
     
-    var searchURL = "https://www.googleapis.com/youtube/v3/search?part=snippet&q="+search+"&key=AIzaSyBqoNc396Db0tYILTe8-qazHwuCwQkF0Kk&maxResults=2&pageToken="+nextPageToken;
+    var searchURL = "https://www.googleapis.com/youtube/v3/search?part=snippet&q="+search+"&key=AIzaSyBqoNc396Db0tYILTe8-qazHwuCwQkF0Kk&maxResults=50&pageToken="+nextPageToken;
     
     var xmlHttp = null;
 
@@ -57,8 +57,8 @@ function parseResultsMoods() {
     xmlHttp.open( "GET", searchURL, false );
     xmlHttp.send();
     results = xmlHttp.responseText;
-    console.log(results);
     //console.log(results);
+
     results = $.parseJSON(results);
     
     $.each(results.items, function(item) {
