@@ -353,7 +353,7 @@ function getData(){
         if(ctags[i] == null)
          ctags.splice(i,1);
     }
-    
+    alert(htags);
     for(var i=0;i<removedVideos.length;i++)
     {
         if(removedVideos[i] == null)
