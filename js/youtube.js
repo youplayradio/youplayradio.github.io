@@ -351,7 +351,7 @@ function getData(){
      if(ptags[i] == null)
          ptags.splice(i,1);
     }
-    for (var i=0;i<wtags.length.i++){
+    for (var i=0;i<wtags.length;i++){
      if(wtags[i] == null)
          wtags.splice(i,1);
     }
