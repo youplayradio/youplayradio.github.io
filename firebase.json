@@ -1,0 +1,9 @@
+{
+  "firebase": "youplayradio",
+  "public": ".",
+  "ignore": [
+    "firebase.json",
+    ".*",
+    "**/node_modules/**"
+  ]
+}

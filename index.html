@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>YouPlayer Radio</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.css" rel="stylesheet">
+
+    <!-- Add custom CSS here -->
+    <link href="css/stylish-portfolio.css" rel="stylesheet">
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <script type="text/javascript" src="http://www.youtube.com/player_api"></script>
+</head>
+
+<body onload="getData();">
+    
+     <div style="padding-right:50px;padding-top:2px;float:left">
+         <img src="img/icons/logo.png" alt="Banner Image" width="160" height="75"/>
+    </div>
+    <div style="padding-right:84px;padding-top:2px;float:right">
+            <h2><strong>My Moods</strong></h2>
+    </div>
+    <header class="main-header2" role="banner">
+          <div class="form-group">
+            <br>
+            <input type="text" class="form-control" id="search" placeholder="Search by Artist, Song, Genre... " onkeydown="if(event.keyCode == 13) {setSearch();}">
+          </div>
+    </header>
+    
+    <div class="navbar navbar-fixed-bottom" id="fott">
+            <a onclick="javascript:pause();"><img src="img/icons/pause.png" alt="Banner Image" width="70" height="70"/></a>
+            <a onclick="javascript:play();"><img src="img/icons/play.png" alt="Banner Image" width="70" height="70"/></a>
+            <a onclick="javascript:nextSong();"><img src="img/icons/skip.png" alt="Banner Image" width="70" height="70"/></a>
+            <a onclick="javascript:flagged();" id="flagger"><img src="img/icons/flag.png" alt="Banner Image" width="70" height="70"/></a>
+    </div>
+    
+    
+    <!-- Side Menu -->
+    <div id="sidebar-wrapper">   
+        <ul class="sidebar-nav">            
+            <br>
+            <li><a onclick="javascript:setChill();"><img src="img/icons/chill.png" alt="Book" width="42" height="42">&nbsp;&nbsp;<strong>Chill</strong></a>
+            </li>
+            <br>
+            <li><a onclick="javascript:setHappy();"><img src="img/icons/simely.png" alt="Book" width="42" height="42">&nbsp;&nbsp;<strong>Happy</strong></a>
+            </li>
+            <br>
+            <li><a onclick="javascript:setStudying();" ><img src="img/icons/study.png" alt="Book" width="42" height="42">&nbsp;&nbsp;<strong>Studying</strong></a>
+            </li>
+            <br>
+            <li><a onclick="javascript:setParty();"><img src="img/icons/party.png" alt="Book" width="42" height="42">&nbsp;&nbsp;<strong>Party</strong></a>
+            </li>
+            <br>
+            <li><a onclick="javascript:setWorkout();"><img src="img/icons/workout.png" alt="Book" width="42" height="42">&nbsp;&nbsp;<strong>Workout</strong></a>
+            </li>
+        </ul>
+    </div>
+    <!-- /Side Menu -->
+
+    <!-- Full Page Image Header Area -->
+    <div id="top" class="header">
+        <div class="vert-text">  
+            <div class="videoWrapper" id="videoplayer">
+            </div>
+        </div>
+    </div>
+    <!-- /Full Page Image Header Area -->
+
+  
+    <!-- JavaScript -->
+    <script src="js/jquery-1.10.2.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script src="js/youtube.js"></script>
+    <script src="https://apis.google.com/js/client.js?onload=googleApiClientReady"></script>
+
+    <!-- Custom JavaScript for the Side Menu and Smooth Scrolling -->
+    <script>
+    $("#menu-close").click(function(e) {
+        e.preventDefault();
+        $("#sidebar-wrapper").toggleClass("active");
+    });
+    </script>
+    <script>
+    $("#menu-toggle").click(function(e) {
+        e.preventDefault();
+        $("#sidebar-wrapper").toggleClass("active");
+    });
+    </script>
+    <script>
+    $(function() {
+        $('a[href*=#]:not([href=#])').click(function() {
+            if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') || location.hostname == this.hostname) {
+
+                var target = $(this.hash);
+                target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+                if (target.length) {
+                    $('html,body').animate({
+                        scrollTop: target.offset().top
+                    }, 1000);
+                    return false;
+                }
+            }
+        });
+    });
+    </script>
+
+</body>
+
+</html>
