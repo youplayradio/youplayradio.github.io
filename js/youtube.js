@@ -17,7 +17,7 @@ function searchVideos() {
     xmlHttp.open( "GET", searchURL, false );
     xmlHttp.send();
     results = xmlHttp.responseText;
-    //console.log(results);
+
     results = $.parseJSON(results);
     currentIndex = 0;
     parseResults();
@@ -33,7 +33,6 @@ function searchVideosMoods() {
     xmlHttp.open( "GET", searchURL, false );
     xmlHttp.send();
     results = xmlHttp.responseText;
-    console.log(results);
 
     results = $.parseJSON(results);
     parseResultsMoods();    
@@ -341,20 +340,27 @@ function getData(){
     {
      if(stags[i] == null)
          stags.splice(i,1);
+    }
+    for(var i=0;i<htags.length;i++)
+    {
      if(htags[i] == null)
          htags.splice(i,1);
+    }
+    for (var i=0;i<ptags.length;i++)
+    {
      if(ptags[i] == null)
          ptags.splice(i,1);
+    }
+    for (var i=0;i<wtags.length;i++){
      if(wtags[i] == null)
          wtags.splice(i,1);
     }
-    
     for (var i=0; i<ctags.length;i++)
     {
         if(ctags[i] == null)
          ctags.splice(i,1);
     }
-    
+    alert(htags);
     for(var i=0;i<removedVideos.length;i++)
     {
         if(removedVideos[i] == null)
