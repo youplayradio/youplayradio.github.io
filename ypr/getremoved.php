@@ -16,7 +16,7 @@ $removed = array();
 
 while ($row = mysql_fetch_assoc($result))
 {
-    array_push($removed, array("id" => $row['videoID']));
+    array_push($removed, $row['videoID']);
 }
 
 echo json_encode($removed);
