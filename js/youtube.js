@@ -310,8 +310,23 @@ function flagged() {
          //$('#flagger').attr('href', "mailto:youplayradio@gmail.com?Subject=Flagged%20Video&Body=Link:%20http://youtube.com/watch/"+currentVideo);  
     var videoLink = "http://youtube.com/watch/"+currentVideo;
     var searchText = search;
-        alert(videoLink);
-        alert(searchText);
+        
+	            $.ajax({
+	                url: 'http://clubbedinapp.com/ypr/submitflag.php',
+	                crossDomain: true,
+	                type: 'post',
+	                data: { 
+                        "link": videoLink,
+                       "search": searchText
+                    },
+	                success: function (data) {
+	                	alert("Video has been flagged for being irrelevant. Awaiting moderation...");
+                        alert(data);
+	                },
+	                error: function (data) {
+						alert("Error: Could Not Flag Video");
+					}
+	            });
     //window.location=document.getElementById('flagger').href;
     }
 }
