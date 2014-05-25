@@ -346,8 +346,11 @@ function httpGet(){
 function getData(){
     var json = httpGet();
     json = jQuery.parseJSON(json);
-    
+
     stags = json.StudyTags; ctags = json.ChillTags; htags = json.HappyTags; ptags = json.PartyTags; wtags = json.WorkOutTags; removedVideos = json.removedVideos; pageVisits = json.PageViews;
+    
+    pageVisits = parseInt(pageVisits);
+    
     pageVisits++;
     for(var i=0;i<stags.length;i++)
     {
