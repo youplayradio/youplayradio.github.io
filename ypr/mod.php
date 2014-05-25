@@ -17,6 +17,7 @@ $result = mysql_query('SELECT * FROM flags');
           echo $_GET['searcht']; 
           echo $_GET['rid'];
           mysql_query('DELETE FROM flags WHERE searchText = "'.$_GET['searcht'].'" AND videoID = "'.$rid.'"');
+          echo mysql_error();
       } else
       {
           mysql_query('INSERT INTO removed (videoID) VALUES ("'.$_GET['rid'].'")');
