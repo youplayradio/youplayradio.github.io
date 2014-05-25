@@ -40,6 +40,7 @@
             <a onclick="javascript:play();"><img src="img/icons/play.png" alt="Banner Image" width="70" height="70"/></a>
             <a onclick="javascript:nextSong();"><img src="img/icons/skip.png" alt="Banner Image" width="70" height="70"/></a>
             <a onclick="javascript:flagged();" id="flagger"><img src="img/icons/flag.png" alt="Banner Image" width="70" height="70"/></a>
+            <div data-href="https://youplayradio.github.io" data-type="box_count"><img src="img/icons/share.png" alt="Banner Image" width="70" height="70"></div>
     </div>
     
     
@@ -125,7 +126,14 @@
         });
     });
     </script>
-
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&appId=1382346558721261&version=v2.0";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
 </body>
 
 </html>
