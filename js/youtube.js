@@ -33,6 +33,7 @@ function searchVideosMoods() {
     xmlHttp.open( "GET", searchURL, false );
     xmlHttp.send();
     results = xmlHttp.responseText;
+    console.log(results);
     //console.log(results);
     results = $.parseJSON(results);
     parseResultsMoods();    
