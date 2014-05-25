@@ -396,7 +396,7 @@ function getData(){
                         var json = jQuery.parseJSON(data);
                         for(var i=0; i<json.length; i++)
                         {
-                            removedVideos.push(json[i].id);
+                            removedVideos.push(json[i]);
                         }
 	                }
 	            });
