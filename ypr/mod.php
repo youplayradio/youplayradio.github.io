@@ -1,6 +1,4 @@
 <?php
-header("access-control-allow-origin: *");
-
 $dbhost = 'localhost';
 $dbuser = 'clubbed_admin';
 $dbpass = 'ClubbedIn2013';
@@ -11,11 +9,14 @@ $dbserver = mysql_connect($dbhost, $dbuser, $dbpass)
 mysql_select_db($db)
     or die("Unable to select database: " . mysql_error());
 
-$videoLink = $_POST['link'];
-$searchText = $_POST['search'];
-$videoID = $_POST['id'];
+$result = mysql_query('SELECT * FROM flags');
 
-mysql_query('INSERT INTO flags (videoLink, searchText, videoID) VALUES ("'.$videoLink.'","'.$searchText.'","'.$videoID.'")');
+while($row = mysql_fetch_assoc($result)){
+    
+    
+    
+    
+}
 
 
 ?>

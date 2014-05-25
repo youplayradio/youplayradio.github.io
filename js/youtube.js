@@ -311,6 +311,7 @@ function flagged() {
          //$('#flagger').attr('href', "mailto:youplayradio@gmail.com?Subject=Flagged%20Video&Body=Link:%20http://youtube.com/watch/"+currentVideo);  
     var videoLink = "http://youtube.com/watch/"+currentVideo;
     var searchText = search;
+    var id = currentVideo;
         
 	            $.ajax({
 	                url: 'http://clubbedinapp.com/ypr/submitflag.php',
@@ -318,7 +319,8 @@ function flagged() {
 	                type: 'post',
 	                data: { 
                         "link": videoLink,
-                       "search": searchText
+                       "search": searchText,
+                        "id": id
                     },
 	                success: function (data) {
 	                	alert("Video has been flagged for being irrelevant. Awaiting moderation...");
