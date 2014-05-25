@@ -34,10 +34,9 @@ function searchVideosMoods() {
     xmlHttp.send();
     results = xmlHttp.responseText;
     console.log(results);
-    //console.log(results);
+
     results = $.parseJSON(results);
     parseResultsMoods();    
-    
 }
 
 function parseResultsMoods() {
