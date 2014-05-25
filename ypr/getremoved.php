@@ -1,4 +1,6 @@
 <?php
+header("access-control-allow-origin: *");
+
 $dbhost = 'localhost';
 $dbuser = 'clubbed_admin';
 $dbpass = 'ClubbedIn2013';
