@@ -82,7 +82,7 @@ function setHappy() {
     videoIDs = [];
     shufflehtags();
 
-    for(var i=0;i<5;i++) {    
+    for(var i=0;i<3;i++) {    
         search = htags[i]+ " music";
         searchVideosMoods();
     }
@@ -94,7 +94,7 @@ function setStudying() {
     videoIDs = [];
     shufflestags();
 
-    for(var i=0;i<5;i++) {    
+    for(var i=0;i<3;i++) {    
         search = stags[i]+ " music";
         searchVideosMoods();
     }
@@ -106,7 +106,7 @@ function setParty() {
     videoIDs = [];
     shuffleptags();
 
-    for(var i=0;i<5;i++) {    
+    for(var i=0;i<3;i++) {    
         search = ptags[i]+ " music";
         searchVideosMoods();
     }
@@ -118,7 +118,7 @@ function setWorkout() {
     videoIDs = [];
     shufflewtags();
 
-    for(var i=0;i<5;i++) {    
+    for(var i=0;i<3;i++) {    
         search = wtags[i]+ " music";
         searchVideosMoods();
     }
