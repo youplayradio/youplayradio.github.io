@@ -12,9 +12,15 @@ mysql_select_db($db)
 $result = mysql_query('SELECT * FROM flags');
 
 while($row = mysql_fetch_assoc($result)){
+    ?>
     
-    echo '<a href="'+$row['videoLink']+'">Video Link</a>';
-    echo $row['videoLink'];
+    <a href="<?php echo $row['videoLink']?>" target="_blank">Video Link</a>
+    <br> Search Text: <?php echo $row['searchText'] ?>
+    <br> <a href="mod.php?rid=0">Keep</a>
+    <br> <a href="mod.php?rid=<?php echo $row['videoID']?>">Remove</a>
+
+    <hr>
+<?php
     
 }
 
