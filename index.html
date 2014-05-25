@@ -108,6 +108,7 @@
     </script>
     <script>
     $(function() {
+                var pathname = "http://youtube.com/watch/"+currentVideo;
         $('a[href*=#]:not([href=#])').click(function() {
             if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') || location.hostname == this.hostname) {
 
@@ -160,7 +161,6 @@
  function fb_callout() {
     var pathname = "http://youtube.com/watch/"+currentVideo;
      (function(d){
-        var pathname = "http://youtube.com/watch/"+currentVideo;
          var js, id = 'facebook-jssdk', ref = d.getElementsByTagName('script')[0];
          if (d.getElementById(id)) {return;}
          js = d.createElement('script'); js.id = id; js.async = true;
