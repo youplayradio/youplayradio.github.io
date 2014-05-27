@@ -267,7 +267,7 @@ function embedVideo() {
     }
     
     onYouTubeIframeAPIReady();   
-    getVolume();
+    setSlider();
 }
 
 var player;
@@ -286,12 +286,6 @@ function onSliderChange(sliderVal) {
 
 function changeVolume(vol) {
     player.setVolume(vol); 
-}
-
-function getVolume() {
-    currentVolume = player.getVolume();
-    alert(currentVolume);
-    setSlider();
 }
 
 function setSlider() {
