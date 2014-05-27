@@ -290,6 +290,7 @@ function changeVolume(vol) {
 
 function getVolume() {
     currentVolume = player.getVolume();
+    alert(currentVolume);
     setSlider();
 }
 
