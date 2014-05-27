@@ -279,9 +279,7 @@ function onYouTubeIframeAPIReady() {
   });
 }
 
-function onSliderChange() {
-    var sliderVal = 0;
-    //var sliderVal = getSliderValue
+function onSliderChange(sliderVal) {
     changeVolume(sliderVal);
 }
 

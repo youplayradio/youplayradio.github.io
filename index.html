@@ -34,12 +34,7 @@
             min: 0,
             max: 100,
             change: function(event, ui) {
-                if(player==null || player==undefined)
-                {
-                    alert("No music playing!");
-                }
-                else
-                    alert(ui.value);
+                    onSliderChange(ui.value);
             }
         });
     });
