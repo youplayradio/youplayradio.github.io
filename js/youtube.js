@@ -277,6 +277,7 @@ function onYouTubeIframeAPIReady() {
       'onStateChange': onPlayerStateChange
     }
   });
+  getVolume();
 }
 
 function onSliderChange(sliderVal) {
