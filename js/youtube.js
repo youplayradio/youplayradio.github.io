@@ -136,8 +136,7 @@ function getVideosMoods() {
     
 }
 
-function parseResults() {
-    
+function parseResults() {    
     videoIDs = [];
     
     $.each(results.items, function(item) {
