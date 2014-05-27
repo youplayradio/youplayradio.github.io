@@ -6,7 +6,7 @@ var currentIndex;
 var videoIDs, ctags, htags, stags, ptags, wtags = [];
 var removedVideos = [];
 var currentStatus = 0;
-var currentVolume;
+var currentVolume = 100;
 
 function searchVideos() {
     var searchURL = "https://www.googleapis.com/youtube/v3/search?part=snippet&q="+search+"&key=AIzaSyDqQDNI16y7KgpmA4BrX0KJV-TCpUHon4s&maxResults=50";    
@@ -295,7 +295,7 @@ function getVolume() {
 }
 
 function setSlider() {
-    $("#slider").val(currentVoume).slider("refresh");
+    $("#slider").val(currentVolume).slider("refresh");
 }
 
 function pause() {
