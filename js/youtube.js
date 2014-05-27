@@ -331,7 +331,6 @@ function flagged() {
 function nextSong() {    
     currentIndex++;
     currentVideo = videoIDs[currentIndex];
-
     embedVideo();
 }
 
