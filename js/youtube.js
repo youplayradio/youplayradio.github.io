@@ -283,17 +283,10 @@ function onYouTubeIframeAPIReady() {
 function onSliderChange(sliderVal) {
     currentVolume = sliderVal;
     player.setVolume(currentVolume);
-    alert(player);
 }
 
 function changeVolume() {
     player.setVolume(currentVolume);
-}
-    
-
-function setSlider() {
-    //$("#slider").val(currentVolume).slider("refresh");
-    $('#slider').slider("value", currentVolume);
 }
 
 function pause() {
