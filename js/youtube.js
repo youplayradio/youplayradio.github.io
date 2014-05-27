@@ -267,7 +267,7 @@ function embedVideo() {
     }
     
     onYouTubeIframeAPIReady();   
-    setSlider();
+    changeVolume();
 }
 
 var player;
@@ -285,6 +285,11 @@ function onSliderChange(sliderVal) {
     player.setVolume(currentVolume);
     alert(player);
 }
+
+function changeVolume() {
+    player.setVolume(currentVolume);
+}
+    
 
 function setSlider() {
     //$("#slider").val(currentVolume).slider("refresh");
