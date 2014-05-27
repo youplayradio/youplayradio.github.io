@@ -200,8 +200,7 @@ function shufflectags() {
     ctags = array;     
 }
 
-function shufflehtags() {
-    
+function shufflehtags() {    
     var array = htags;
     
     for (var i = array.length - 1; i > 0; i--) {
