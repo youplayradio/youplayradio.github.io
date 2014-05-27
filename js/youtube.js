@@ -279,12 +279,23 @@ function onYouTubeIframeAPIReady() {
   });
 }
 
+function onSliderChange() {
+    var sliderVal = 0;
+    //var sliderVal = getSliderValue
+    changeVolume(sliderVal);
+}
+
 function changeVolume(vol) {
     player.setVolume(vol);   
 }
 
 function getVolume() {
     currentVolume = player.getVolume();
+    setSlider();
+}
+
+function setSlider() {
+    $("#slider").val(currentVoume).slider("refresh");
 }
 
 function pause() {

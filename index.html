@@ -29,7 +29,10 @@
       ga('send', 'pageview');  
         
     $(document).ready(function() {
-        $( "#slider" ).slider();
+        $( "#slider" ).slider({
+            min: 0,
+            max: 100
+        });
     });
     </script>    
 
