@@ -187,8 +187,7 @@ function shuffleArray() {
     embedVideo();
 }
 
-function shufflectags() {
-    
+function shufflectags() {   
     var array = ctags;
     
     for (var i = array.length - 1; i > 0; i--) {
