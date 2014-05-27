@@ -147,13 +147,6 @@ body {
   z-index: 2;
 }
 
-#slider {
- width:100%;
-    position: absolute;
-  padding-left: 28.5%;
-    
-}
-
 .main-footer {
   position: absolute;   
   text-align: left;
