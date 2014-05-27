@@ -169,7 +169,6 @@ function parseResults() {
     
     if (duration > 500) {
         
-        
     }
     */
     
