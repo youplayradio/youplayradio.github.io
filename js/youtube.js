@@ -132,9 +132,7 @@ function setSearch() {
     searchVideos();
 }
 
-function getVideosMoods() {
-    
-}
+function getVideosMoods() {}
 
 function parseResults() {    
     videoIDs = [];
