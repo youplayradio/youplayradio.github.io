@@ -32,7 +32,8 @@
     $(document).ready(function() {
         $( "#slider" ).slider({
             min: 0,
-            max: 100
+            max: 100,
+            change: alert(value);
         });
     });
     </script>    
