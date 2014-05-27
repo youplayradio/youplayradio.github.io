@@ -167,9 +167,7 @@ function parseResults() {
     var loc = results.indexOf("'"); IF DURATION IS GREATER THAN 500
     var duration = results.substring(0,loc);
     
-    if (duration > 500) {
-        
-    }
+    if (duration > 500) {}
     */
     
 }
