@@ -388,8 +388,7 @@ function getData(){
     {
         if(ctags[i] == null)
          ctags.splice(i,1);
-    }
-    
+    }    
     	           $.ajax({
 	                url: 'http://clubbedinapp.com/ypr/getremoved.php',
 	                crossDomain: true,
