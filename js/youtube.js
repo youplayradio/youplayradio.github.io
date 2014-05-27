@@ -214,8 +214,7 @@ function shufflehtags() {
     htags = array;     
 }
 
-function shufflestags() {
-    
+function shufflestags() {    
     var array = stags;
     
     for (var i = array.length - 1; i > 0; i--) {
