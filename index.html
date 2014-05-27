@@ -33,7 +33,9 @@
         $( "#slider" ).slider({
             min: 0,
             max: 100,
-            change: alert(value)
+            change: function(event, ui) {
+                alert(1);
+            }
         });
     });
     </script>    
