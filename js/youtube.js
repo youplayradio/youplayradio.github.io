@@ -328,8 +328,7 @@ function flagged() {
     }
 }
 
-function nextSong() {
-    
+function nextSong() {    
     currentIndex++;
     currentVideo = videoIDs[currentIndex];
 
