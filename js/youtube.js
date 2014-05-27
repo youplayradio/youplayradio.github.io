@@ -267,6 +267,7 @@ function embedVideo() {
     }
     
     onYouTubeIframeAPIReady();   
+    getVolume();
 }
 
 var player;
@@ -277,8 +278,6 @@ function onYouTubeIframeAPIReady() {
       'onStateChange': onPlayerStateChange
     }
   });
-    alert(player.getVolume);
-  getVolume();
 }
 
 function onSliderChange(sliderVal) {
