@@ -282,6 +282,7 @@ function onYouTubeIframeAPIReady() {
 
 function onSliderChange(sliderVal) {
     currentVolume = sliderVal;
+    alert(currentVolume);
     player.setVolume(sliderVal);
 }
 
