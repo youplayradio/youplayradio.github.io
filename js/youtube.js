@@ -8,7 +8,6 @@ var removedVideos = [];
 var currentStatus = 0;
 
 function searchVideos() {
-
     var searchURL = "https://www.googleapis.com/youtube/v3/search?part=snippet&q="+search+"&key=AIzaSyDqQDNI16y7KgpmA4BrX0KJV-TCpUHon4s&maxResults=50";    
     var xmlHttp = null;
 
