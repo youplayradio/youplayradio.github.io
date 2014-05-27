@@ -289,7 +289,8 @@ function changeVolume(vol) {
 }
 
 function setSlider() {
-    $("#slider").val(currentVolume).slider("refresh");
+    //$("#slider").val(currentVolume).slider("refresh");
+    $('#slider').slider("value", currentVolume);
 }
 
 function pause() {
