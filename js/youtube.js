@@ -86,9 +86,9 @@ function setHappy() {
         search = htags[i]+ " music";
         searchVideosMoods();
     }
-    shuffleArray();
     currentIndex = 0;
-    embedVideo();
+    shuffleArray();
+    //embedVideo();
 }
 function setStudying() {
     videoIDs = [];
@@ -98,9 +98,9 @@ function setStudying() {
         search = stags[i]+ " music";
         searchVideosMoods();
     }
-    shuffleArray();
     currentIndex = 0;
-    embedVideo();
+    shuffleArray();
+    //embedVideo();
 }
 function setParty() {
     videoIDs = [];
@@ -109,10 +109,10 @@ function setParty() {
     for(var i=0;i<3;i++) {    
         search = ptags[i]+ " music";
         searchVideosMoods();
-    }
-    shuffleArray();
+    }    
     currentIndex = 0;
-    embedVideo();
+    shuffleArray();
+    //embedVideo();
 }
 function setWorkout() {
     videoIDs = [];
@@ -122,9 +122,9 @@ function setWorkout() {
         search = wtags[i]+ " music";
         searchVideosMoods();
     }
-    shuffleArray();
     currentIndex = 0;
-    embedVideo();
+    shuffleArray();
+    //embedVideo();
 }
 function setSearch() {
     search = document.getElementById("search").value + " music";
