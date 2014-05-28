@@ -128,13 +128,13 @@ function setWorkout() {
 }
 function setSearch() {
     search = document.getElementById("search").value + " music";
+    videoIDs = [];
     searchVideos();
 }
 
 function getVideosMoods() {}
 
 function parseResults() {    
-    videoIDs = [];
     
     $.each(results.items, function(item) {
         if(results.items[item].id.videoId != null && results.items[item].id.videoId != undefined)
