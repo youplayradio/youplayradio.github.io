@@ -250,7 +250,6 @@ function shufflewtags() {
 }
 
 function embedVideo() {
-    alert('embedded');
     currentStatus=1;
     if(currentStatus == 1)
     {
