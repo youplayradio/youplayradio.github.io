@@ -289,6 +289,7 @@ function onSliderChange(sliderVal) {
 
 function changeVolume(event) {
     player.setVolume(currentVolume);
+    //p
 }
 
 function pause() {
