@@ -142,9 +142,13 @@ body {
   position: absolute;   
   text-align: left;
   width: 100%;
-  display: inline-block;
   background-color: Black;    
   z-index: 2;
+}
+#slider {
+    display:inline-block;
+    width:15%;
+    margin-left:12.5%;
 }
 
 .main-footer {
