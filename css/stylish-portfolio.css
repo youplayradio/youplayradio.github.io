@@ -112,7 +112,7 @@ body {
   height: 100%;
   width: 100%;
   position: relative;
-  background: url(../img/mainbg.jpg) no-repeat center center fixed; 
+  background: url(../img/main_bg.png) no-repeat center center fixed; 
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -170,7 +170,7 @@ body {
 	padding-bottom: 56.25%; /* 16:9 */
 	padding-top: 25px;
 	height: 0;
-    background: background: url(../img/mainbg.jpg) no-repeat center center fixed; 
+    background: background: url(../img/main_bg.png) no-repeat center center fixed; 
 }
 
 .videoWrapper iframe {
@@ -288,7 +288,7 @@ i.scroll:hover {
 @media (max-width: 768px) {
 	
   .header {
-	background: url(../img/mainbg.jpg) no-repeat center center scroll; 
+	background: url(../img/main_bg.png) no-repeat center center scroll; 
   }
 
   .callout {
