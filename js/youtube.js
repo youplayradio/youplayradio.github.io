@@ -74,9 +74,9 @@ function setChill() {
         search = ctags[i]+ " music";
         searchVideosMoods();
     }
-    shuffleArray();
     currentIndex = 0;
-    embedVideo();
+    shuffleArray();
+    //embedVideo();
 }
 function setHappy() {
     videoIDs = [];
@@ -288,7 +288,11 @@ function onSliderChange(sliderVal) {
 }
 
 function changeVolume(event) {
+<<<<<<< HEAD
 //    Player.setVolume(currentVolume);
+=======
+    player.setVolume(currentVolume);
+>>>>>>> cfd9509c83375a91a9d4ad5ff3c333a913bea755
 }
 
 function pause() {
