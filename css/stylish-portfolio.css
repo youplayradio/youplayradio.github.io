@@ -141,8 +141,8 @@ body {
 #fott {
   position: absolute;   
   text-align: left;
-  padding-left: 28.5%;
   width: 100%;
+  display: inline-block;
   background-color: Black;    
   z-index: 2;
 }
