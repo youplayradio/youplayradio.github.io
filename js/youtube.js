@@ -267,7 +267,7 @@ function embedVideo() {
     }
     
     onYouTubeIframeAPIReady();   
-    //changeVolume();
+    changeVolume();
 }
 
 var player;
@@ -275,7 +275,7 @@ var player;
 function onYouTubeIframeAPIReady() {
   player = new YT.Player('idank', {
     events: {
-      'onStateChange': onPlayerStateChange
+      'onStateChange': onPlayerStateChange,
       'onReady': changeVolume
     }
   });
