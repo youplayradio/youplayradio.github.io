@@ -276,10 +276,12 @@ var player;
 function onYouTubeIframeAPIReady() {
   player = new YT.Player('idank', {
     events: {
-      'onStateChange': onPlayerStateChange,
-      'onReady': changeVolume
+      'onStateChange': onPlayerStateChange
+     // 'onReady': changeVolume
     }
   });
+    
+  changeVolume();
 }
 
 function onSliderChange(sliderVal) {
@@ -288,7 +290,7 @@ function onSliderChange(sliderVal) {
 }
 
 function changeVolume(event) {
-    event.target.setVolume(currentVolume);
+    Player.setVolume(currentVolume);
 }
 
 function pause() {
