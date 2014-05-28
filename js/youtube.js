@@ -290,7 +290,7 @@ function onSliderChange(sliderVal) {
 }
 
 function changeVolume(event) {
-    Player.setVolume(currentVolume);
+    player.setVolume(currentVolume);
 }
 
 function pause() {
