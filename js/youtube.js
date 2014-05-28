@@ -74,9 +74,9 @@ function setChill() {
         search = ctags[i]+ " music";
         searchVideosMoods();
     }
-    shuffleArray();
     currentIndex = 0;
-    embedVideo();
+    shuffleArray();
+    //embedVideo();
 }
 function setHappy() {
     videoIDs = [];
