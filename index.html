@@ -49,9 +49,15 @@
         if (key == 179 || key == 32)
         {
             if(psd)
+            {
                 play();
+                psd = true;
+            }
             else
+            {
                 pause();
+                psd = false;
+            }
         }
         else if (key == 176)
             nextSong();
