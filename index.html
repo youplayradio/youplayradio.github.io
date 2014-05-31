@@ -46,21 +46,8 @@
         var key = e.keyCode ? e.keyCode : e.which;
         //console.log(key);
         
-        if (key == 179 || key == 32)
-        {
-            if(psd)
-            {
-                play();
-                psd = false;
-            }
-            else
-            {
-                pause();
-                psd = true;
-            }
-        }
-        else if (key == 176)
-            nextSong();
+        if (key == 179 || key == 32){if(psd){play();psd = false;}else{pause();psd = true;} }
+        else if (key == 176) nextSong();
         
         
     }
