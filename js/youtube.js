@@ -135,7 +135,7 @@ function setSearch() {
 function getVideosMoods() {}
 
 function parseResults() {    
-    
+    console.log(results);
     $.each(results.items, function(item) {
         if(results.items[item].id.videoId != null && results.items[item].id.videoId != undefined)
         {
