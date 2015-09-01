@@ -9,7 +9,7 @@ var currentStatus = 0;
 var currentVolume = 50;
 
 function searchVideos() {
-    var searchURL = "https://www.googleapis.com/youtube/v3/search?part=snippet&q="+search+"&key=AIzaSyDqQDNI16y7KgpmA4BrX0KJV-TCpUHon4s&maxResults=50";    
+    var searchURL = "https://www.googleapis.com/youtube/v3/search?part=snippet&q="+search+"&key=AIzaSyDqQDNI16y7KgpmA4BrX0KJV-TCpUHon4s&maxResults=50";
     var xmlHttp = null;
 
     xmlHttp = new XMLHttpRequest();
@@ -20,12 +20,12 @@ function searchVideos() {
     results = $.parseJSON(results);
     currentIndex = 0;
     parseResults();
-   
+
 }
 
 function searchVideosMoods() {
     var searchURL = "https://www.googleapis.com/youtube/v3/search?part=snippet&q="+search+"&key=AIzaSyDqQDNI16y7KgpmA4BrX0KJV-TCpUHon4s&maxResults=50";
-    
+
     var xmlHttp = null;
     xmlHttp = new XMLHttpRequest();
     xmlHttp.open( "GET", searchURL, false );
@@ -33,7 +33,7 @@ function searchVideosMoods() {
     results = xmlHttp.responseText;
 
     results = $.parseJSON(results);
-    parseResultsMoods();    
+    parseResultsMoods();
 }
 
 function parseResultsMoods() {
@@ -44,10 +44,10 @@ function parseResultsMoods() {
                 videoIDs.push(results.items[item].id.videoId);
         }
     });
-    
+
     var nextPageToken = results.nextPageToken;
-    
-    var searchURL = "https://www.googleapis.com/youtube/v3/search?part=snippet&q="+search+"&key=AIzaSyDqQDNI16y7KgpmA4BrX0KJV-TCpUHon4s&maxResults=50&pageToken="+nextPageToken;    
+
+    var searchURL = "https://www.googleapis.com/youtube/v3/search?part=snippet&q="+search+"&key=AIzaSyDqQDNI16y7KgpmA4BrX0KJV-TCpUHon4s&maxResults=50&pageToken="+nextPageToken;
     var xmlHttp = null;
 
     xmlHttp = new XMLHttpRequest();
@@ -56,21 +56,21 @@ function parseResultsMoods() {
     results = xmlHttp.responseText;
     //console.log(results);
     results = $.parseJSON(results);
-    
+
     $.each(results.items, function(item) {
         if(results.items[item].id.videoId != null && results.items[item].id.videoId != undefined){
             if(removedVideos.indexOf(results.items[item].id.videoID) == -1)
                 videoIDs.push(results.items[item].id.videoId);
         }
     });
-    
+
 }
 
 function setChill() {
     videoIDs = [];
     shufflectags();
 
-    for(var i=0;i<3;i++) {    
+    for(var i=0;i<3;i++) {
         search = ctags[i]+ " music";
         searchVideosMoods();
     }
@@ -82,7 +82,7 @@ function setHappy() {
     videoIDs = [];
     shufflehtags();
 
-    for(var i=0;i<3;i++) {    
+    for(var i=0;i<3;i++) {
         search = htags[i]+ " music";
         searchVideosMoods();
     }
@@ -94,7 +94,7 @@ function setStudying() {
     videoIDs = [];
     shufflestags();
 
-    for(var i=0;i<3;i++) {    
+    for(var i=0;i<3;i++) {
         search = stags[i]+ " music";
         searchVideosMoods();
     }
@@ -106,10 +106,10 @@ function setParty() {
     videoIDs = [];
     shuffleptags();
 
-    for(var i=0;i<3;i++) {    
+    for(var i=0;i<3;i++) {
         search = ptags[i]+ " music";
         searchVideosMoods();
-    }    
+    }
     currentIndex = 0;
     shuffleArray();
     //embedVideo();
@@ -118,7 +118,7 @@ function setWorkout() {
     videoIDs = [];
     shufflewtags();
 
-    for(var i=0;i<3;i++) {    
+    for(var i=0;i<3;i++) {
         search = wtags[i]+ " music";
         searchVideosMoods();
     }
@@ -134,7 +134,7 @@ function setSearch() {
 
 function getVideosMoods() {}
 
-function parseResults() {    
+function parseResults() {
     console.log(results);
     $.each(results.items, function(item) {
         if(results.items[item].id.videoId != null && results.items[item].id.videoId != undefined)
@@ -142,14 +142,14 @@ function parseResults() {
             if(removedVideos.indexOf(results.items[item].id.videoId) == -1) {
                 videoIDs.push(results.items[item].id.videoId);
             }
-            
+
         }
-    });  
-    
+    });
+
     shuffleArray();
-    
+
     var searchURL = "https://gdata.youtube.com/feeds/api/videos/"+videoIDs[0]+"?v=1";
-    
+
     var xmlHttp = null;
 
     /*xmlHttp = new XMLHttpRequest();
@@ -162,91 +162,91 @@ function parseResults() {
     results = splits[0];
     var loc = results.indexOf("'"); IF DURATION IS GREATER THAN 500
     var duration = results.substring(0,loc);
-    
+
     if (duration > 500) {}
     */
-    
+
 }
 
 function shuffleArray() {
     var array = videoIDs;
-    
+
     for (var i = array.length - 1; i > 0; i--) {
         var j = Math.floor(Math.random() * (i + 1));
         var temp = array[i];
         array[i] = array[j];
         array[j] = temp;
     }
-    
+
     videoIDs = array;
 
     embedVideo();
 }
 
-function shufflectags() {   
+function shufflectags() {
     var array = ctags;
-    
+
     for (var i = array.length - 1; i > 0; i--) {
         var j = Math.floor(Math.random() * (i + 1));
         var temp = array[i];
         array[i] = array[j];
         array[j] = temp;
     }
-    
-    ctags = array;     
+
+    ctags = array;
 }
 
-function shufflehtags() {    
+function shufflehtags() {
     var array = htags;
-    
+
     for (var i = array.length - 1; i > 0; i--) {
         var j = Math.floor(Math.random() * (i + 1));
         var temp = array[i];
         array[i] = array[j];
         array[j] = temp;
     }
-    
-    htags = array;     
+
+    htags = array;
 }
 
-function shufflestags() {    
+function shufflestags() {
     var array = stags;
-    
+
     for (var i = array.length - 1; i > 0; i--) {
         var j = Math.floor(Math.random() * (i + 1));
         var temp = array[i];
         array[i] = array[j];
         array[j] = temp;
     }
-    
-    stags = array;     
+
+    stags = array;
 }
 
-function shuffleptags() {   
+function shuffleptags() {
     var array = ptags;
-    
+
     for (var i = array.length - 1; i > 0; i--) {
         var j = Math.floor(Math.random() * (i + 1));
         var temp = array[i];
         array[i] = array[j];
         array[j] = temp;
     }
-    
-    ptags = array;     
+
+    ptags = array;
 }
 
 function shufflewtags() {
-    
+
     var array = wtags;
-    
+
     for (var i = array.length - 1; i > 0; i--) {
         var j = Math.floor(Math.random() * (i + 1));
         var temp = array[i];
         array[i] = array[j];
         array[j] = temp;
     }
-    
-    wtags = array;     
+
+    wtags = array;
 }
 
 function embedVideo() {
@@ -265,8 +265,8 @@ function embedVideo() {
     else {
         $('#videoplayer').append("<iframe width='560' id='idank' height='310' src='http://www.youtube.com/embed/"+currentVideo+"?&fs=0&controls=0&autohide=1&color=white&autoplay=1&version=3&enablejsapi=1&iv_load_policy=3' frameborder='0' ></iframe>");
     }
-    
-    onYouTubeIframeAPIReady();   
+
+    onYouTubeIframeAPIReady();
     changeVolume();
 }
 
@@ -309,16 +309,16 @@ function flagged() {
     if(currentVideo == null || currentVideo == undefined)
         alert("No video to flag!");
     else {
-         //$('#flagger').attr('href', "mailto:youplayradio@gmail.com?Subject=Flagged%20Video&Body=Link:%20http://youtube.com/watch/"+currentVideo);  
+         //$('#flagger').attr('href', "mailto:youplayradio@gmail.com?Subject=Flagged%20Video&Body=Link:%20http://youtube.com/watch/"+currentVideo);
     var videoLink = "http://youtube.com/watch/"+currentVideo;
     var searchText = search;
     var id = currentVideo;
-        
-	            $.ajax({
+
+	            /*$.ajax({
 	                url: 'http://clubbedinapp.com/ypr/submitflag.php',
 	                crossDomain: true,
 	                type: 'post',
-	                data: { 
+	                data: {
                         "link": videoLink,
                        "search": searchText,
                         "id": id
@@ -329,18 +329,18 @@ function flagged() {
 	                error: function (data) {
 						alert("Error: Could Not Flag Video");
 					}
-	            });
+        });*/
     //window.location=document.getElementById('flagger').href;
     }
 }
 
-function nextSong() {    
+function nextSong() {
     currentIndex++;
     currentVideo = videoIDs[currentIndex];
     embedVideo();
 }
 
-function detectmob() { 
+function detectmob() {
  if( navigator.userAgent.match(/Android/i)
  || navigator.userAgent.match(/webOS/i)
  || navigator.userAgent.match(/iPhone/i)
@@ -354,9 +354,9 @@ function detectmob() {
 }
 
 function httpGet(){
-    var xmlHttp = null;    
+    var xmlHttp = null;
     var theUrl = "https://youplayradio.firebaseio.com/.json";
-    
+
     xmlHttp = new XMLHttpRequest();
     xmlHttp.open("GET",theUrl,false);
     xmlHttp.send(null);
@@ -367,8 +367,8 @@ function getData(){
     detectmob();
     var json = httpGet();
     json = jQuery.parseJSON(json);
-    
-    stags = json.StudyTags; ctags = json.ChillTags; htags = json.HappyTags; ptags = json.PartyTags; wtags = json.WorkOutTags; 
+
+    stags = json.StudyTags; ctags = json.ChillTags; htags = json.HappyTags; ptags = json.PartyTags; wtags = json.WorkOutTags;
 
     for(var i=0;i<stags.length;i++)
     {
@@ -393,8 +393,8 @@ function getData(){
     {
         if(ctags[i] == null)
          ctags.splice(i,1);
-    }    
-    	           $.ajax({
+    }
+    	          /* $.ajax({
 	                url: 'http://clubbedinapp.com/ypr/getremoved.php',
 	                crossDomain: true,
 	                type: 'post',
@@ -406,10 +406,9 @@ function getData(){
                             removedVideos.push(json[i]);
                         }
 	                }
-	            });
+	            });*/
 }
 
 function changeBackground() {
     $('#videoplayer').css({"background":"#000"});
 }
-
