@@ -7,9 +7,10 @@ var videoIDs, ctags, htags, stags, ptags, wtags = [];
 var removedVideos = [];
 var currentStatus = 0;
 var currentVolume = 50;
+var key = "AIzaSyBcZQayQhTZJPfo6w0cGhIVChLqAl8gtgs";
 
 function searchVideos() {
-    var searchURL = "https://www.googleapis.com/youtube/v3/search?part=snippet&q="+search+"&key=AIzaSyDqQDNI16y7KgpmA4BrX0KJV-TCpUHon4s&maxResults=50";
+    var searchURL = "https://www.googleapis.com/youtube/v3/search?part=snippet&q="+search+"&key="+key+"&maxResults=50";
     var xmlHttp = null;
 
     xmlHttp = new XMLHttpRequest();
@@ -24,7 +25,7 @@ function searchVideos() {
 }
 
 function searchVideosMoods() {
-    var searchURL = "https://www.googleapis.com/youtube/v3/search?part=snippet&q="+search+"&key=AIzaSyDqQDNI16y7KgpmA4BrX0KJV-TCpUHon4s&maxResults=50";
+    var searchURL = "https://www.googleapis.com/youtube/v3/search?part=snippet&q="+search+"&key="+key+"&maxResults=50";
 
     var xmlHttp = null;
     xmlHttp = new XMLHttpRequest();
@@ -47,7 +48,7 @@ function parseResultsMoods() {
 
     var nextPageToken = results.nextPageToken;
 
-    var searchURL = "https://www.googleapis.com/youtube/v3/search?part=snippet&q="+search+"&key=AIzaSyDqQDNI16y7KgpmA4BrX0KJV-TCpUHon4s&maxResults=50&pageToken="+nextPageToken;
+    var searchURL = "https://www.googleapis.com/youtube/v3/search?part=snippet&q="+search+"&key="+key+"&maxResults=50&pageToken="+nextPageToken;
     var xmlHttp = null;
 
     xmlHttp = new XMLHttpRequest();
